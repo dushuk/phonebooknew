@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisterNewUser extends TestBase {
+public class registerNewUser extends TestBase {
 
     By lofinForm = By.id("login-form");
     By userRegistrationForm = By.cssSelector("[href=\"/user/registration\"]");
@@ -20,7 +20,7 @@ public class RegisterNewUser extends TestBase {
     public void registerNewUser() {
         String userData = faker.internet().emailAddress();
         String password = faker.internet().password();
-        String expectedErrorMassage = "noErrorMsg";
+        String expectedErrorMessage = "noErrorMsg";
         driver.findElement(lofinForm).isDisplayed();
         driver.findElement(userRegistrationForm).click();
         driver.findElement(RegistrationForm).isDisplayed();
@@ -29,7 +29,7 @@ public class RegisterNewUser extends TestBase {
         fillField(password, confirmPasswordField);
         driver.findElement(loginButton).click();
         String actualerrorMassage = driver.findElement(errorMassageBlock).getText();
-        Assert.assertEquals(actualerrorMassage, expectedErrorMassage, "");
+        Assert.assertEquals(actualerrorMassage, expectedErrorMessage, "");
     }
 
 }
