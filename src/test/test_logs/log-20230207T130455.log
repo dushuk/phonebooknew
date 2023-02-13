@@ -1,0 +1,126 @@
+2023-02-07 13:04:58,309 DEBUG [main] o.a.h.i.c.BasicClientConnectionManager [BasicClientConnectionManager.java:161] -- Get connection for route {}->http://phonebook.telran-edu.de:8080
+2023-02-07 13:04:58,451 DEBUG [main] o.a.h.i.c.DefaultClientConnectionOperator [DefaultClientConnectionOperator.java:177] -- Connecting to phonebook.telran-edu.de:8080
+2023-02-07 13:04:58,598 DEBUG [main] o.a.h.c.p.RequestAddCookies [RequestAddCookies.java:123] -- CookieSpec selected: ignoreCookies
+2023-02-07 13:04:58,600 DEBUG [main] o.a.h.c.p.RequestAuthCache [RequestAuthCache.java:77] -- Auth cache not set in the context
+2023-02-07 13:04:58,601 DEBUG [main] o.a.h.c.p.RequestTargetAuthentication [RequestTargetAuthentication.java:80] -- Target auth state: UNCHALLENGED
+2023-02-07 13:04:58,603 DEBUG [main] o.a.h.c.p.RequestProxyAuthentication [RequestProxyAuthentication.java:89] -- Proxy auth state: UNCHALLENGED
+2023-02-07 13:04:58,603 DEBUG [main] o.a.h.i.c.DefaultHttpClient [DefaultRequestDirector.java:677] -- Attempt 1 to execute request
+2023-02-07 13:04:58,604 DEBUG [main] o.a.h.i.c.DefaultClientConnection [DefaultClientConnection.java:274] -- Sending request: POST /api/contact HTTP/1.1
+2023-02-07 13:04:58,605 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "POST /api/contact HTTP/1.1[\r][\n]"
+2023-02-07 13:04:58,608 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Access-Token: eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InRlc3RAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MjEwNjk3ODI5Nn0.GM1wsoRV2QoAsD6wKmIk7N49DDpuCejK4BC9H9YItJvesH5vft8HO2uqTPnGQJwJ5oXKS2OILqP1yoanMnIMkA [\r][\n]"
+2023-02-07 13:04:58,609 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Accept: */*[\r][\n]"
+2023-02-07 13:04:58,610 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Content-Type: application/json[\r][\n]"
+2023-02-07 13:04:58,611 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Content-Length: 116[\r][\n]"
+2023-02-07 13:04:58,611 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Host: phonebook.telran-edu.de:8080[\r][\n]"
+2023-02-07 13:04:58,612 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Connection: Keep-Alive[\r][\n]"
+2023-02-07 13:04:58,613 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)[\r][\n]"
+2023-02-07 13:04:58,614 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2023-02-07 13:04:58,616 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "[\r][\n]"
+2023-02-07 13:04:58,616 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:278] -- >> POST /api/contact HTTP/1.1
+2023-02-07 13:04:58,617 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Access-Token: eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InRlc3RAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MjEwNjk3ODI5Nn0.GM1wsoRV2QoAsD6wKmIk7N49DDpuCejK4BC9H9YItJvesH5vft8HO2uqTPnGQJwJ5oXKS2OILqP1yoanMnIMkA 
+2023-02-07 13:04:58,617 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Accept: */*
+2023-02-07 13:04:58,617 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Content-Type: application/json
+2023-02-07 13:04:58,619 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Content-Length: 116
+2023-02-07 13:04:58,619 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Host: phonebook.telran-edu.de:8080
+2023-02-07 13:04:58,619 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Connection: Keep-Alive
+2023-02-07 13:04:58,619 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+2023-02-07 13:04:58,619 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Accept-Encoding: gzip,deflate
+2023-02-07 13:04:58,620 DEBUG [main] o.a.h.wire [Wire.java:87] --  >> "{"firstName":"Kristan","lastName":"Hand","description":"Aut aut voluptatibus est suscipit et aliquid modi sed sed."}"
+2023-02-07 13:04:58,730 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "HTTP/1.1 201 [\r][\n]"
+2023-02-07 13:04:58,732 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Vary: Origin[\r][\n]"
+2023-02-07 13:04:58,733 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Vary: Access-Control-Request-Method[\r][\n]"
+2023-02-07 13:04:58,733 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Vary: Access-Control-Request-Headers[\r][\n]"
+2023-02-07 13:04:58,735 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "X-Content-Type-Options: nosniff[\r][\n]"
+2023-02-07 13:04:58,736 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "X-XSS-Protection: 1; mode=block[\r][\n]"
+2023-02-07 13:04:58,737 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+2023-02-07 13:04:58,737 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Pragma: no-cache[\r][\n]"
+2023-02-07 13:04:58,737 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Expires: 0[\r][\n]"
+2023-02-07 13:04:58,738 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "X-Frame-Options: DENY[\r][\n]"
+2023-02-07 13:04:58,739 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Content-Type: application/json[\r][\n]"
+2023-02-07 13:04:58,739 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Transfer-Encoding: chunked[\r][\n]"
+2023-02-07 13:04:58,739 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Date: Tue, 07 Feb 2023 12:05:02 GMT[\r][\n]"
+2023-02-07 13:04:58,740 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Keep-Alive: timeout=60[\r][\n]"
+2023-02-07 13:04:58,740 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Connection: keep-alive[\r][\n]"
+2023-02-07 13:04:58,740 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "[\r][\n]"
+2023-02-07 13:04:58,741 DEBUG [main] o.a.h.i.c.DefaultClientConnection [DefaultClientConnection.java:259] -- Receiving response: HTTP/1.1 201 
+2023-02-07 13:04:58,742 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:262] -- << HTTP/1.1 201 
+2023-02-07 13:04:58,742 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Vary: Origin
+2023-02-07 13:04:58,742 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Vary: Access-Control-Request-Method
+2023-02-07 13:04:58,743 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Vary: Access-Control-Request-Headers
+2023-02-07 13:04:58,744 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << X-Content-Type-Options: nosniff
+2023-02-07 13:04:58,744 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << X-XSS-Protection: 1; mode=block
+2023-02-07 13:04:58,745 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2023-02-07 13:04:58,746 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Pragma: no-cache
+2023-02-07 13:04:58,746 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Expires: 0
+2023-02-07 13:04:58,746 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << X-Frame-Options: DENY
+2023-02-07 13:04:58,746 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Content-Type: application/json
+2023-02-07 13:04:58,746 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Transfer-Encoding: chunked
+2023-02-07 13:04:58,746 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Date: Tue, 07 Feb 2023 12:05:02 GMT
+2023-02-07 13:04:58,747 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Keep-Alive: timeout=60
+2023-02-07 13:04:58,747 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Connection: keep-alive
+2023-02-07 13:04:58,757 DEBUG [main] o.a.h.i.c.DefaultHttpClient [DefaultRequestDirector.java:504] -- Connection can be kept alive for 60000 MILLISECONDS
+2023-02-07 13:04:58,766 DEBUG [main] i.r.i.RestAssuredHttpBuilder [HTTPBuilder.java:553] -- Parsing response as: application/json
+2023-02-07 13:04:58,768 DEBUG [main] i.r.i.RestAssuredHttpBuilder [HTTPBuilder.java:556] -- Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2023-02-07 13:04:58,800 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "7e[\r][\n]"
+2023-02-07 13:04:58,800 DEBUG [main] o.a.h.wire [Wire.java:87] --  << "{"id":2862,"firstName":"Kristan","lastName":"Hand","description":"Aut aut voluptatibus est suscipit et aliquid modi sed sed."}"
+2023-02-07 13:04:58,801 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "[\r][\n]"
+2023-02-07 13:04:58,802 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "0[\r][\n]"
+2023-02-07 13:04:58,802 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "[\r][\n]"
+2023-02-07 13:04:58,803 DEBUG [main] o.a.h.i.c.BasicClientConnectionManager [BasicClientConnectionManager.java:200] -- Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@78bad03b
+2023-02-07 13:04:58,803 DEBUG [main] o.a.h.i.c.BasicClientConnectionManager [BasicClientConnectionManager.java:225] -- Connection can be kept alive for 60000 MILLISECONDS
+2023-02-07 13:04:59,890 DEBUG [main] o.a.h.i.c.BasicClientConnectionManager [BasicClientConnectionManager.java:161] -- Get connection for route {}->http://phonebook.telran-edu.de:8080
+2023-02-07 13:04:59,891 DEBUG [main] o.a.h.i.c.DefaultClientConnectionOperator [DefaultClientConnectionOperator.java:177] -- Connecting to phonebook.telran-edu.de:8080
+2023-02-07 13:05:00,037 DEBUG [main] o.a.h.c.p.RequestAddCookies [RequestAddCookies.java:123] -- CookieSpec selected: ignoreCookies
+2023-02-07 13:05:00,038 DEBUG [main] o.a.h.c.p.RequestAuthCache [RequestAuthCache.java:77] -- Auth cache not set in the context
+2023-02-07 13:05:00,038 DEBUG [main] o.a.h.c.p.RequestTargetAuthentication [RequestTargetAuthentication.java:80] -- Target auth state: UNCHALLENGED
+2023-02-07 13:05:00,038 DEBUG [main] o.a.h.c.p.RequestProxyAuthentication [RequestProxyAuthentication.java:89] -- Proxy auth state: UNCHALLENGED
+2023-02-07 13:05:00,038 DEBUG [main] o.a.h.i.c.DefaultHttpClient [DefaultRequestDirector.java:677] -- Attempt 1 to execute request
+2023-02-07 13:05:00,038 DEBUG [main] o.a.h.i.c.DefaultClientConnection [DefaultClientConnection.java:274] -- Sending request: DELETE /api/contact/2862 HTTP/1.1
+2023-02-07 13:05:00,039 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "DELETE /api/contact/2862 HTTP/1.1[\r][\n]"
+2023-02-07 13:05:00,039 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Content-Type: application/json[\r][\n]"
+2023-02-07 13:05:00,039 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Access-Token: eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InRlc3RAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MjEwNjk3ODI5Nn0.GM1wsoRV2QoAsD6wKmIk7N49DDpuCejK4BC9H9YItJvesH5vft8HO2uqTPnGQJwJ5oXKS2OILqP1yoanMnIMkA [\r][\n]"
+2023-02-07 13:05:00,039 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Accept: */*[\r][\n]"
+2023-02-07 13:05:00,041 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Host: phonebook.telran-edu.de:8080[\r][\n]"
+2023-02-07 13:05:00,041 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Connection: Keep-Alive[\r][\n]"
+2023-02-07 13:05:00,041 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)[\r][\n]"
+2023-02-07 13:05:00,041 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2023-02-07 13:05:00,041 DEBUG [main] o.a.h.wire [Wire.java:73] --  >> "[\r][\n]"
+2023-02-07 13:05:00,042 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:278] -- >> DELETE /api/contact/2862 HTTP/1.1
+2023-02-07 13:05:00,042 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Content-Type: application/json
+2023-02-07 13:05:00,043 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Access-Token: eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InRlc3RAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MjEwNjk3ODI5Nn0.GM1wsoRV2QoAsD6wKmIk7N49DDpuCejK4BC9H9YItJvesH5vft8HO2uqTPnGQJwJ5oXKS2OILqP1yoanMnIMkA 
+2023-02-07 13:05:00,044 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Accept: */*
+2023-02-07 13:05:00,044 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Host: phonebook.telran-edu.de:8080
+2023-02-07 13:05:00,046 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Connection: Keep-Alive
+2023-02-07 13:05:00,047 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+2023-02-07 13:05:00,047 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:281] -- >> Accept-Encoding: gzip,deflate
+2023-02-07 13:05:00,192 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "HTTP/1.1 200 [\r][\n]"
+2023-02-07 13:05:00,193 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Vary: Origin[\r][\n]"
+2023-02-07 13:05:00,195 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Vary: Access-Control-Request-Method[\r][\n]"
+2023-02-07 13:05:00,196 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Vary: Access-Control-Request-Headers[\r][\n]"
+2023-02-07 13:05:00,196 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "X-Content-Type-Options: nosniff[\r][\n]"
+2023-02-07 13:05:00,196 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "X-XSS-Protection: 1; mode=block[\r][\n]"
+2023-02-07 13:05:00,197 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+2023-02-07 13:05:00,197 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Pragma: no-cache[\r][\n]"
+2023-02-07 13:05:00,197 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Expires: 0[\r][\n]"
+2023-02-07 13:05:00,198 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "X-Frame-Options: DENY[\r][\n]"
+2023-02-07 13:05:00,198 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Content-Length: 0[\r][\n]"
+2023-02-07 13:05:00,198 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Date: Tue, 07 Feb 2023 12:05:03 GMT[\r][\n]"
+2023-02-07 13:05:00,198 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Keep-Alive: timeout=60[\r][\n]"
+2023-02-07 13:05:00,199 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "Connection: keep-alive[\r][\n]"
+2023-02-07 13:05:00,199 DEBUG [main] o.a.h.wire [Wire.java:73] --  << "[\r][\n]"
+2023-02-07 13:05:00,199 DEBUG [main] o.a.h.i.c.DefaultClientConnection [DefaultClientConnection.java:259] -- Receiving response: HTTP/1.1 200 
+2023-02-07 13:05:00,201 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:262] -- << HTTP/1.1 200 
+2023-02-07 13:05:00,201 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Vary: Origin
+2023-02-07 13:05:00,201 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Vary: Access-Control-Request-Method
+2023-02-07 13:05:00,201 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Vary: Access-Control-Request-Headers
+2023-02-07 13:05:00,202 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << X-Content-Type-Options: nosniff
+2023-02-07 13:05:00,202 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << X-XSS-Protection: 1; mode=block
+2023-02-07 13:05:00,202 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2023-02-07 13:05:00,202 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Pragma: no-cache
+2023-02-07 13:05:00,202 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Expires: 0
+2023-02-07 13:05:00,202 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << X-Frame-Options: DENY
+2023-02-07 13:05:00,203 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Content-Length: 0
+2023-02-07 13:05:00,203 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Date: Tue, 07 Feb 2023 12:05:03 GMT
+2023-02-07 13:05:00,204 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Keep-Alive: timeout=60
+2023-02-07 13:05:00,204 DEBUG [main] o.a.h.headers [DefaultClientConnection.java:265] -- << Connection: keep-alive
+2023-02-07 13:05:00,204 DEBUG [main] o.a.h.i.c.DefaultHttpClient [DefaultRequestDirector.java:504] -- Connection can be kept alive for 60000 MILLISECONDS
