@@ -1,6 +1,8 @@
 package NEW;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -25,6 +27,21 @@ public class TestBase_1 {
         driver.get("http://phonebook.telran-edu.de:8080/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public void fillField(String userData, By locator) {
+        driver.findElement(locator).click();
+        driver.findElement(locator).sendKeys(userData);
+    }
+
+    public boolean isElementPresents(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException exception) {
+            exception.printStackTrace();
+            return false;
+        }
     }
 
     @AfterMethod
