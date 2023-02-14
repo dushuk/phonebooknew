@@ -23,7 +23,6 @@ public class Login_1 extends TestBase_1 {
         driver.findElement(loginButton).click();
 
         Assert.assertTrue(isElementPresents(contactsTable));
-
     }
 
 }

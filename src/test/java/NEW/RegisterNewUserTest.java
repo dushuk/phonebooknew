@@ -37,9 +37,8 @@ public class RegisterNewUserTest extends TestBase_1 {
     }
 
     private void checkErrorMassege(By locator, String expectedErrorMassage) {
-        String actualErrorMessage = driver.findElement(locator).getText();
         String err = "Actual error message is not equal expected";
-        Assert.assertEquals(actualErrorMessage, expectedErrorMassage, err);
+        checkItemText(locator, expectedErrorMassage, err);
     }
 
 
