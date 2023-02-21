@@ -1,10 +1,10 @@
-package NEW;
+package e2e;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 
-public class Login_1 extends TestBase_1 {
+public class Login extends TestBase {
 
     By loginForm = By.id("login-form");
     By emailField = By.name("email");

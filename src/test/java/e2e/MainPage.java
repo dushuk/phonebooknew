@@ -1,7 +1,9 @@
+package e2e;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 
-public class ChangeLanguage extends Login {
+public class MainPage extends Login {
     @BeforeMethod
     public void changeLanguage() {
         driver.findElement(By.id("langSelect")).click();

@@ -1,5 +1,0 @@
-2023-02-13 21:54:36,595 DEBUG [main] i.g.b.w.c.ResolutionCache [ResolutionCache.java:186] -- Resolution chrome=109 in cache (valid until 22:08:01 13/02/2023 CET)
-2023-02-13 21:54:36,603 DEBUG [main] i.g.b.w.c.ResolutionCache [ResolutionCache.java:186] -- Resolution chrome109=109.0.5414.74 in cache (valid until 11:15:54 14/02/2023 CET)
-2023-02-13 21:54:36,604 INFO [main] i.g.b.w.WebDriverManager [WebDriverManager.java:1238] -- Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)
-2023-02-13 21:54:36,630 DEBUG [main] i.g.b.w.WebDriverManager [WebDriverManager.java:1193] -- Driver chromedriver 109.0.5414.74 found in cache
-2023-02-13 21:54:36,633 INFO [main] i.g.b.w.WebDriverManager [WebDriverManager.java:1291] -- Exporting webdriver.chrome.driver as C:\Users\dushu\.cache\selenium\chromedriver\win32\109.0.5414.74\chromedriver.exe
