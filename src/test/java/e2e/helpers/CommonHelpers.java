@@ -26,4 +26,5 @@ public class CommonHelpers extends TestBase {
         String actualText = driver.findElement(locator).getText();
         Assert.assertEquals(actualText, expectedText, err);
     }
+
 }

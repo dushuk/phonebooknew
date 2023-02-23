@@ -1,14 +1,20 @@
 package e2e;
 
+import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -35,13 +41,31 @@ public class TestBase {
         logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
     }
 
+    public String takeScreenshot() throws IOException {
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File("reference/screen" + System.currentTimeMillis() + ".png");
+
+
+        Files.copy(tmp, screenshot);
+        return screenshot.getAbsolutePath();
+    }
+
     @AfterMethod
-    public void tearDown(Method m) {
+    public void tearDown() {
         //Thread.sleep(1000);
         if (driver != null) {
             driver.quit();
         }
-        logger.info("Stop test " + m.getName());
+    }
+
+    @AfterMethod
+    public void stopTest(ITestResult result) throws IOException {
+        if (result.isSuccess()) {
+            logger.info("PASSED" + result.getMethod().getMethodName());
+        } else {
+            logger.info("FAILED" + result.getMethod().getMethodName() + "Screens path: " + takeScreenshot());
+        }
+
         logger.info("=========================================");
     }
 }
