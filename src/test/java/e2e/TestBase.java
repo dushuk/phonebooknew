@@ -1,13 +1,10 @@
 package e2e;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -36,26 +33,6 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
-    }
-
-    public void fillField(String userData, By locator) {
-        driver.findElement(locator).click();
-        driver.findElement(locator).sendKeys(userData);
-    }
-
-    public boolean isElementPresents(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException exception) {
-            exception.printStackTrace();
-            return false;
-        }
-    }
-
-    public void checkItemText(By locator, String expectedText, String err) {
-        String actualText = driver.findElement(locator).getText();
-        Assert.assertEquals(actualText, expectedText, err);
     }
 
     @AfterMethod

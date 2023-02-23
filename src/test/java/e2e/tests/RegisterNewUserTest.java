@@ -1,47 +1,16 @@
 package e2e.tests;
 
 import com.github.javafaker.Faker;
-import e2e.TestBase;
-import org.openqa.selenium.By;
+import e2e.helpers.CommonHelpers;
+import e2e.helpers.RegisterHelpers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisterNewUserTest extends TestBase {
+public class RegisterNewUserTest extends CommonHelpers {
 
-    By loginForm = By.id("login-form");
-    By userRegistrationLink = By.cssSelector("[href=\"/user/registration\"]");
-    By registrationForm = By.id("registration-form");
-    By emailField = By.cssSelector("[placeholder=\"Email\"]");
-    By passwordField = By.cssSelector("[placeholder=\"Password\"]");
-    By confirmPasswordField = By.name("confirm-password");
-    By loginButton = By.xpath("//*[@type=\"submit\"]");
-    By errorMassageBlock = By.id("error-message");
-    By errorEmailMassageBlock = By.id("email-error-invalid");
-    By errorPasswordMaxLenghtMassageBlock = By.id("password-error-maxlength");
     Faker faker = new Faker();
 
-    private void goToRegistrationPage() {
-        Assert.assertTrue(isElementPresents(loginForm));
-        driver.findElement(userRegistrationLink).click();
-        Assert.assertTrue(isElementPresents(registrationForm));
-    }
-
-    private void fillRegistrationForm(String userData, String password) {
-        fillField(userData, emailField);
-        fillField(password, passwordField);
-        fillField(password, confirmPasswordField);
-    }
-
-    private void clickSignUpButton() {
-        driver.findElement(loginButton).click();
-        driver.findElement(loginButton).isEnabled();
-    }
-
-    private void checkErrorMassege(By locator, String expectedErrorMassage) {
-        String err = "Actual error message is not equal expected";
-        checkItemText(locator, expectedErrorMassage, err);
-    }
-
+    public RegisterHelpers registerHelpers = new RegisterHelpers();
 
     // Positive
     @Test
@@ -51,13 +20,12 @@ public class RegisterNewUserTest extends TestBase {
         String password = faker.internet().password();
         String expectedErrorMassage = "noErrorMsg";
         // Act
-        goToRegistrationPage();
-        fillRegistrationForm(userData, password);
-        clickSignUpButton();
+        registerHelpers.goToRegistrationPage();
+        registerHelpers.fillRegistrationForm(userData, password);
+        registerHelpers.clickSignUpButton();
         // Assert
-        checkErrorMassege(errorMassageBlock, expectedErrorMassage);
+        registerHelpers.checkErrorMassege(registerHelpers.errorMassageBlock, expectedErrorMassage);
     }
-
 
     // Negative
     @Test
@@ -68,12 +36,12 @@ public class RegisterNewUserTest extends TestBase {
         String expectedEmailErrorMassage = "Email must be a valid email address.";
         String expectedPasswordErrorMassage = "Password must be no longer than 20 characters.";
         // Act
-        goToRegistrationPage();
-        fillRegistrationForm(userData, password);
-        Assert.assertFalse(isElementPresents(errorMassageBlock));
+        registerHelpers.goToRegistrationPage();
+        registerHelpers.fillRegistrationForm(userData, password);
+        Assert.assertFalse(isElementPresents(registerHelpers.errorMassageBlock));
         // Assert
-        checkErrorMassege(errorEmailMassageBlock, expectedEmailErrorMassage);
-        checkErrorMassege(errorPasswordMaxLenghtMassageBlock, expectedPasswordErrorMassage);
+        registerHelpers.checkErrorMassege(registerHelpers.errorEmailMassageBlock, expectedEmailErrorMassage);
+        registerHelpers.checkErrorMassege(registerHelpers.errorPasswordMaxLenghtMassageBlock, expectedPasswordErrorMassage);
     }
 
     // Negative
@@ -84,10 +52,10 @@ public class RegisterNewUserTest extends TestBase {
         String password = "test@gmail.com";
         String expectedErrorMassage = "Error! User already exists  now?";
         // Act
-        goToRegistrationPage();
-        fillRegistrationForm(userData, password);
-        clickSignUpButton();
-        checkErrorMassege(errorMassageBlock, expectedErrorMassage);
+        registerHelpers.goToRegistrationPage();
+        registerHelpers.fillRegistrationForm(userData, password);
+        registerHelpers.clickSignUpButton();
+        registerHelpers.checkErrorMassege(registerHelpers.errorMassageBlock, expectedErrorMassage);
     }
 
 

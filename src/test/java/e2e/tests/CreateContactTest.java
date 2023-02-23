@@ -1,29 +1,15 @@
 package e2e.tests;
 
 import com.github.javafaker.Faker;
-import e2e.MainPage;
+import e2e.helpers.MainHelpers;
+import e2e.utils.DataProviders;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-public class CreateContactTest extends MainPage {
+public class CreateContactTest extends MainHelpers {
 
     Faker faker = new Faker();
-
-    @DataProvider
-    public Iterator<Object[]> newContact() {
-        List<Object[]> list = new ArrayList<>();
-        list.add(new Object[]{"Alex", "Dushuk", "This I"});
-        list.add(new Object[]{"Max", "Spiegel", "This Max"});
-        list.add(new Object[]{"Andrei", "Luft", "This Andrei"});
-
-        return list.iterator();
-    }
 
     private void openAddNewContactDialog() {
         driver.findElement(By.cssSelector("[href='/contacts']")).click();
@@ -58,8 +44,24 @@ public class CreateContactTest extends MainPage {
         Assert.assertEquals(actualCountRow, expectedCountRow);
     }
 
-    @Test(dataProvider = "newContact")
-    public void createNewContact(String firstName, String lastName, String description) throws InterruptedException {
+    @Test(dataProvider = "newContact", dataProviderClass = DataProviders.class)
+    public void createNewContactDataProvider(String firstName, String lastName, String description) throws InterruptedException {
+
+        // String firstName = faker.internet().uuid();
+        // String lastName = faker.internet().uuid();
+        // String description = faker.internet().uuid();
+        Number expectedCountRow = 1;
+
+        openAddNewContactDialog();
+        fillAddNewContactForm(firstName, lastName, description);
+        saveNewContact();
+        checkFieldsOnContactInfoAfterCreatedContact(firstName, lastName, description);
+        goToContactPageAndFillFilterField(firstName);
+        checkCountRows(expectedCountRow);
+    }
+
+    @Test(dataProvider = "newContactWithCSV", dataProviderClass = DataProviders.class)
+    public void createNewContactDataProviderWithFileCSV(String firstName, String lastName, String description) throws InterruptedException {
 
         // String firstName = faker.internet().uuid();
         // String lastName = faker.internet().uuid();
