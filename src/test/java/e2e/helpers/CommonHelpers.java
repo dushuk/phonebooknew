@@ -18,6 +18,11 @@ public class CommonHelpers {
         driver.findElement(locator).click();
     }
 
+    public void openDialog(By locator) {
+        clickOnVisibleElement(locator);
+        Assert.assertTrue(isElementPresents(By.xpath("//*[@role='dialog']")));
+    }
+
     public void fillField(String userData, By locator) {
         driver.findElement(locator).click();
         driver.findElement(locator).clear();

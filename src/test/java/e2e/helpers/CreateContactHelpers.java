@@ -10,8 +10,7 @@ public class CreateContactHelpers extends ContactHelpers {
     }
 
     public void openAddNewContactDialog() {
-        driver.findElement(By.cssSelector("[href='/contacts']")).click();
-        Assert.assertTrue(isElementPresents(By.xpath("//*[@role='dialog']")));
+        openDialog(By.cssSelector("[href='/contacts']"));
     }
 
     public void fillAddNewContactForm(String firstName, String lastName, String description) {

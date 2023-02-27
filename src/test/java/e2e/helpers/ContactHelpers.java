@@ -25,6 +25,17 @@ public class ContactHelpers extends CommonHelpers {
         clickOnVisibleElement(By.xpath("//*[@id='contacts-list']//*[@class ='list-group']"));
     }
 
+    public void openRemoveContactDialog() {
+        openDialog(By.xpath("//*[@id='contacts-list']//*[@class ='list-group-item']/img"));
+    }
+
+    public void removeContact() throws InterruptedException {
+        clickOnVisibleElement(By.id("check-box-remove-contact"));
+        clickOnVisibleElement(By.id("submit-remove"));
+        Thread.sleep(1000);
+        Assert.assertFalse(isElementPresents(By.xpath("//*[@role='dialog']")));
+    }
+
     public void checkFieldsOnContactInfo(String firstName, String lastName, String description) {
         checkItemText(By.id("contact-first-name"), firstName, "Actual first name is not equal expected first name");
         checkItemText(By.id("contact-last-name"), lastName, "Actual last name is not equal expected last name");
