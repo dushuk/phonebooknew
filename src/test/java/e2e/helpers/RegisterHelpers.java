@@ -1,6 +1,7 @@
 package e2e.helpers;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class RegisterHelpers extends CommonHelpers {
@@ -15,6 +16,10 @@ public class RegisterHelpers extends CommonHelpers {
     public By errorMassageBlock = By.id("error-message");
     public By errorEmailMassageBlock = By.id("email-error-invalid");
     public By errorPasswordMaxLenghtMassageBlock = By.id("password-error-maxlength");
+
+    public RegisterHelpers(WebDriver driver) {
+        super(driver);
+    }
 
     public void goToRegistrationPage() {
         Assert.assertTrue(isElementPresents(loginForm));

@@ -1,8 +1,8 @@
 package e2e.helpers;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 
 public class LoginHelpers extends CommonHelpers {
 
@@ -12,13 +12,15 @@ public class LoginHelpers extends CommonHelpers {
     By loginButton = By.xpath("//*[@type=\"submit\"]");
     By contactsTable = By.id("contacts-list");
 
-    @BeforeMethod
-    public void login() {
-        String userName = "test@gmail.com";
-        String password = "test@gmail.com";
+    public LoginHelpers(WebDriver driver) {
+        super(driver);
+    }
 
+    public void login() {
+        String email = "test@gmail.com";
+        String password = "test@gmail.com";
         driver.findElement(loginForm).isDisplayed();
-        fillField(userName, emailField);
+        fillField(email, emailField);
         fillField(password, passwordField);
         driver.findElement(loginButton).click();
         Assert.assertTrue(isElementPresents(contactsTable));

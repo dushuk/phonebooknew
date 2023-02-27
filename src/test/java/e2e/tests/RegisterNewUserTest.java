@@ -1,16 +1,13 @@
 package e2e.tests;
 
 import com.github.javafaker.Faker;
-import e2e.helpers.CommonHelpers;
-import e2e.helpers.RegisterHelpers;
+import e2e.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisterNewUserTest extends CommonHelpers {
+public class RegisterNewUserTest extends TestBase {
 
     Faker faker = new Faker();
-
-    public RegisterHelpers registerHelpers = new RegisterHelpers();
 
     // Positive
     @Test
@@ -20,11 +17,11 @@ public class RegisterNewUserTest extends CommonHelpers {
         String password = faker.internet().password();
         String expectedErrorMassage = "noErrorMsg";
         // Act
-        registerHelpers.goToRegistrationPage();
-        registerHelpers.fillRegistrationForm(userData, password);
-        registerHelpers.clickSignUpButton();
+        app.getRegister().goToRegistrationPage();
+        app.getRegister().fillRegistrationForm(userData, password);
+        app.getRegister().clickSignUpButton();
         // Assert
-        registerHelpers.checkErrorMassege(registerHelpers.errorMassageBlock, expectedErrorMassage);
+        app.getRegister().checkErrorMassege(app.getRegister().errorMassageBlock, expectedErrorMassage);
     }
 
     // Negative
@@ -36,12 +33,12 @@ public class RegisterNewUserTest extends CommonHelpers {
         String expectedEmailErrorMassage = "Email must be a valid email address.";
         String expectedPasswordErrorMassage = "Password must be no longer than 20 characters.";
         // Act
-        registerHelpers.goToRegistrationPage();
-        registerHelpers.fillRegistrationForm(userData, password);
-        Assert.assertFalse(isElementPresents(registerHelpers.errorMassageBlock));
+        app.getRegister().goToRegistrationPage();
+        app.getRegister().fillRegistrationForm(userData, password);
+        Assert.assertFalse(app.getRegister().isElementPresents(app.getRegister().errorMassageBlock));
         // Assert
-        registerHelpers.checkErrorMassege(registerHelpers.errorEmailMassageBlock, expectedEmailErrorMassage);
-        registerHelpers.checkErrorMassege(registerHelpers.errorPasswordMaxLenghtMassageBlock, expectedPasswordErrorMassage);
+        app.getRegister().checkErrorMassege(app.getRegister().errorEmailMassageBlock, expectedEmailErrorMassage);
+        app.getRegister().checkErrorMassege(app.getRegister().errorPasswordMaxLenghtMassageBlock, expectedPasswordErrorMassage);
     }
 
     // Negative
@@ -52,10 +49,10 @@ public class RegisterNewUserTest extends CommonHelpers {
         String password = "test@gmail.com";
         String expectedErrorMassage = "Error! User already exists  now?";
         // Act
-        registerHelpers.goToRegistrationPage();
-        registerHelpers.fillRegistrationForm(userData, password);
-        registerHelpers.clickSignUpButton();
-        registerHelpers.checkErrorMassege(registerHelpers.errorMassageBlock, expectedErrorMassage);
+        app.getRegister().goToRegistrationPage();
+        app.getRegister().fillRegistrationForm(userData, password);
+        app.getRegister().clickSignUpButton();
+        app.getRegister().checkErrorMassege(app.getRegister().errorMassageBlock, expectedErrorMassage);
     }
 
 
