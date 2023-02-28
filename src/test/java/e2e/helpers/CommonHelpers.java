@@ -31,10 +31,6 @@ public class CommonHelpers {
         driver.findElement(locator).click();
     }
 
-    public void stopRecording() throws IOException {
-        screenRecorder.stop();
-    }
-
     public void startRecording() throws IOException, AWTException {
         File file = new File("records");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -50,6 +46,19 @@ public class CommonHelpers {
                 new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)), null,
                 file, "My Video");
         screenRecorder.start();
+    }
+
+    public void stopRecording() throws IOException {
+        screenRecorder.stop();
+    }
+
+    public String deleteFiles(String folder) {
+        File directory = new File(folder);
+        File[] files = directory.listFiles();
+        for (File f : files) {
+            f.delete();
+        }
+        return "deleted all files: " + folder;
     }
 
     public void openDialog(By locator) {

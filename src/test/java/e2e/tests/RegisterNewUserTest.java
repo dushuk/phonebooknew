@@ -36,28 +36,29 @@ public class RegisterNewUserTest extends TestBase {
         String expectedEmailErrorMassage = "Email must be a valid email address.";
         String expectedPasswordErrorMassage = "Password must be no longer than 20 characters.";
         // Act
-        app.getRegister().startRecording();
         app.getRegister().goToRegistrationPage();
         app.getRegister().fillRegistrationForm(userData, password);
         Assert.assertFalse(app.getRegister().isElementPresents(app.getRegister().errorMassageBlock));
         // Assert
         app.getRegister().checkErrorMassege(app.getRegister().errorEmailMassageBlock, expectedEmailErrorMassage);
         app.getRegister().checkErrorMassege(app.getRegister().errorPasswordMaxLenghtMassageBlock, expectedPasswordErrorMassage);
-        app.getRegister().stopRecording();
     }
 
     // Negative
     @Test
-    public void registerExistingUser() {
+    public void registerExistingUser() throws IOException, AWTException, InterruptedException {
         // Arrange
         String userData = "test@gmail.com";
         String password = "test@gmail.com";
         String expectedErrorMassage = "Error! User already exists Login now?";
         // Act
+        app.getRegister().startRecording();
         app.getRegister().goToRegistrationPage();
         app.getRegister().fillRegistrationForm(userData, password);
         app.getRegister().clickSignUpButton();
         app.getRegister().checkErrorMassege(app.getRegister().errorMassageBlock, expectedErrorMassage);
+        Thread.sleep(5000);
+        app.getRegister().stopRecording();
     }
 
 
