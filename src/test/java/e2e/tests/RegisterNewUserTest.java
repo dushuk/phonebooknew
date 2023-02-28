@@ -52,13 +52,13 @@ public class RegisterNewUserTest extends TestBase {
         String password = "test@gmail.com";
         String expectedErrorMassage = "Error! User already exists Login now?";
         // Act
-        app.getRegister().startRecording();
+        // app.getRegister().startRecording();
         app.getRegister().goToRegistrationPage();
         app.getRegister().fillRegistrationForm(userData, password);
         app.getRegister().clickSignUpButton();
         app.getRegister().checkErrorMassege(app.getRegister().errorMassageBlock, expectedErrorMassage);
         Thread.sleep(5000);
-        app.getRegister().stopRecording();
+        // app.getRegister().stopRecording();
     }
 
 
