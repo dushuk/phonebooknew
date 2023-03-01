@@ -10,7 +10,11 @@ public enum EndPoint {
     DELETE_CONTAKT("/api/contact/{id}"),
     GET_LIST_OF_CONTACTS("/api/contact"),
     GET_CONTACT_BY_CONTACT_ID("/api/contact/{id}"),
-    UPDATE_CONTACT("/api/contact");
+    UPDATE_CONTACT("/api/contact"),
+    ADD_NEW_EMAIL("/api/email"),
+    GET_EMAIL_BY_EMAIL_ID("/api/email/{id}"),
+    GET_LIST_OF_EMAILS_BY_CONTACT_ID("/api/email/{id}/all"),
+    UPDATE_EMAIL("/api/email");
 
     private final String value;
 }

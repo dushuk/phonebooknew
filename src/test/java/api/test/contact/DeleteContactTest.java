@@ -2,7 +2,7 @@ package api.test.contact;
 
 import api.ApiBase;
 import api.enums.EndPoint;
-import api.model.ContactDto;
+import api.model.contact.ContactDto;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -13,7 +13,7 @@ public class DeleteContactTest extends ApiBase {
     int wrongId;
     Response response;
     ContactDto contactDto;
-    
+
     @BeforeMethod(onlyForGroups = {"positive"})
     public void precondition() {
         contactDto = createContact();
@@ -30,7 +30,7 @@ public class DeleteContactTest extends ApiBase {
     public void deleteContactWithoutId() {
         wrongId = getWrongId();
         response = doDeleteRequest(EndPoint.DELETE_CONTAKT, 500, wrongId);
-        Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE);
+        Assert.assertEquals(response.jsonPath().getString("message"), ERROR_MESSAGE_FOR_CONTACT);
     }
 
 }
