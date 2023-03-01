@@ -78,5 +78,6 @@ public class UpDateEmailTest extends ApiBase {
         Response responseForUpdate = doPutRequest(EndPoint.UPDATE_EMAIL, 500, emailDto);
 
         Assert.assertEquals(responseForUpdate.jsonPath().getString("message"), ERROR_MESSAGE_FOR_CONTACT);
+
     }
 }
