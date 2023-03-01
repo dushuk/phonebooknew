@@ -3,7 +3,6 @@ package api.test.contact;
 import api.ApiBase;
 import api.enums.EndPoint;
 import api.model.ContactDto;
-import com.github.javafaker.Faker;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class AddNewContactTest extends ApiBase {
 
-    Faker faker = new Faker();
     ContactDto contactDto;
     Response response;
     int id;

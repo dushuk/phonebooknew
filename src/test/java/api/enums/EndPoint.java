@@ -7,7 +7,10 @@ import lombok.Getter;
 @Getter
 public enum EndPoint {
     ADD_NEW_CONTACT("/api/contact"),
-    DELETE_CONTAKT("/api/contact/{id}");
-    
+    DELETE_CONTAKT("/api/contact/{id}"),
+    GET_LIST_OF_CONTACTS("/api/contact"),
+    GET_CONTACT_BY_CONTACT_ID("/api/contact/{id}"),
+    UPDATE_CONTACT("/api/contact");
+
     private final String value;
 }

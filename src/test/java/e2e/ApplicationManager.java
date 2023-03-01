@@ -36,6 +36,7 @@ public class ApplicationManager {
         return createContact;
     }
 
+
     public EditContactHelpers getEditeContact() {
         return editeContact;
     }
